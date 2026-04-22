@@ -1,0 +1,27 @@
+## .NET
+bin/
+obj/
+*.user
+*.suo
+*.cache
+*.log
+.vs/
+.vscode/
+
+## Rust / Tauri
+frontend/tauri-frontend/src-tauri/target/
+frontend/tauri-frontend/node_modules/
+frontend/tauri-frontend/dist/
+
+## IDE
+.idea/
+*.swp
+*~
+
+## OS
+Thumbs.db
+.DS_Store
+
+## Env
+.env
+*.local

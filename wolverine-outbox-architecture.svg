@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 950" width="1400" height="950">
+  <defs>
+    <linearGradient id="tealGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#42b883"/>
+      <stop offset="100%" style="stop-color:#35495e"/>
+    </linearGradient>
+    <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#a855f7"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="greenGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#22c55e"/>
+      <stop offset="100%" style="stop-color:#16a34a"/>
+    </linearGradient>
+    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0ea5e9"/>
+      <stop offset="100%" style="stop-color:#0284c7"/>
+    </linearGradient>
+    <linearGradient id="orangeGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f97316"/>
+      <stop offset="100%" style="stop-color:#ea580c"/>
+    </linearGradient>
+    <linearGradient id="blueGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#2563eb"/>
+    </linearGradient>
+
+    <marker id="arrowTeal" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#42b883"/>
+    </marker>
+    <marker id="arrowPurple" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#a855f7"/>
+    </marker>
+    <marker id="arrowOrange" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#f97316"/>
+    </marker>
+    <marker id="arrowGreen" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#22c55e"/>
+    </marker>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#3b82f6"/>
+    </marker>
+    <marker id="arrowSky" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#0ea5e9"/>
+    </marker>
+  </defs>
+
+  <style>
+    .flow-line-teal { stroke-dasharray: 8, 4; animation: dash-flow-teal 0.5s linear infinite; }
+    .flow-line-purple { stroke-dasharray: 8, 4; animation: dash-flow-purple 0.5s linear infinite; }
+    .flow-line-orange { stroke-dasharray: 8, 4; animation: dash-flow-orange 0.5s linear infinite; }
+    .flow-line-green { stroke-dasharray: 8, 4; animation: dash-flow-green 0.5s linear infinite; }
+    .flow-line-blue { stroke-dasharray: 8, 4; animation: dash-flow-blue 0.5s linear infinite; }
+    .flow-line-sky { stroke-dasharray: 8, 4; animation: dash-flow-sky 0.5s linear infinite; }
+
+    @keyframes dash-flow-teal { to { stroke-dashoffset: -12; } }
+    @keyframes dash-flow-purple { to { stroke-dashoffset: -12; } }
+    @keyframes dash-flow-orange { to { stroke-dashoffset: -12; } }
+    @keyframes dash-flow-green { to { stroke-dashoffset: -12; } }
+    @keyframes dash-flow-blue { to { stroke-dashoffset: -12; } }
+    @keyframes dash-flow-sky { to { stroke-dashoffset: -12; } }
+  </style>
+
+  <!-- Background -->
+  <rect width="1400" height="950" fill="#ffffff"/>
+  <g opacity="0.08">
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#94a3b8" stroke-width="0.5"/>
+    </pattern>
+    <rect width="1400" height="950" fill="url(#grid)"/>
+  </g>
+
+  <!-- Title -->
+  <text x="700" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#1e293b">Wolverine Outbox Demo Architecture</text>
+  <text x="700" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#64748b">Outbox / Inbox + Saga Pattern — Wolverine + RabbitMQ + PostgreSQL + Tauri</text>
+
+  <!-- ====== Row 1: Frontend, API, RabbitMQ ====== -->
+
+  <!-- Card 1: Tauri Frontend -->
+  <g transform="translate(55, 85)">
+    <rect x="0" y="0" width="250" height="210" rx="12" fill="#f0fdf4" stroke="#42b883" stroke-width="2"/>
+    <rect x="0" y="0" width="250" height="35" rx="12" fill="url(#tealGradient)"/>
+    <rect x="0" y="20" width="250" height="15" fill="url(#tealGradient)"/>
+    <text x="125" y="24" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff">Tauri Desktop</text>
+
+    <g transform="translate(15, 48)">
+      <rect x="0" y="0" width="103" height="50" rx="6" fill="#ffffff" stroke="#dcfce7" stroke-width="1"/>
+      <text x="51" y="20" text-anchor="middle" font-family="monospace" font-size="10" fill="#42b883">main.ts</text>
+      <text x="51" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#64748b">TypeScript UI</text>
+    </g>
+    <g transform="translate(132, 48)">
+      <rect x="0" y="0" width="103" height="50" rx="6" fill="#ffffff" stroke="#dcfce7" stroke-width="1"/>
+      <text x="51" y="20" text-anchor="middle" font-family="monospace" font-size="10" fill="#42b883">lib.rs</text>
+      <text x="51" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#64748b">Rust Commands</text>
+    </g>
+    <g transform="translate(15, 108)">
+      <rect x="0" y="0" width="103" height="50" rx="6" fill="#ffffff" stroke="#dcfce7" stroke-width="1"/>
+      <text x="51" y="20" text-anchor="middle" font-family="monospace" font-size="10" fill="#42b883">styles.css</text>
+      <text x="51" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#64748b">Ollama-style UI</text>
+    </g>
+    <g transform="translate(132, 108)">
+      <rect x="0" y="0" width="103" height="50" rx="6" fill="#ffffff" stroke="#dcfce7" stroke-width="1"/>
+      <text x="51" y="20" text-anchor="middle" font-family="monospace" font-size="10" fill="#42b883">reqwest</text>
+      <text x="51" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#64748b">HTTP Client</text>
+    </g>
+
+    <text x="125" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#42b883">Vite + TypeScript 2.x + Rust</text>
+  </g>
+
+  <!-- Card 2: ASP.NET Core API -->
+  <g transform="translate(400, 85)">
+    <rect x="0" y="0" width="300" height="210" rx="12" fill="#faf5ff" stroke="#a855f7" stroke-width="2"/>
+    <rect x="0" y="0" width="300" height="35" rx="12" fill="url(#purpleGradient)"/>
+    <rect x="0" y="20" width="300" height="15" fill="url(#purpleGradient)"/>
+    <text x="150" y="24" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff">ASP.NET Core API</text>
+
+    <g transform="translate(15, 48)">
+      <rect x="0" y="0" width="128" height="50" rx="6" fill="#ffffff" stroke="#e9d5ff" stroke-width="1"/>
+      <text x="64" y="20" text-anchor="middle" font-family="monospace" font-size="10" fill="#a855f7">Endpoints/</text>
+      <text x="64" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#64748b">UserEndpoints</text>
+    </g>
+    <g transform="translate(157, 48)">
+      <rect x="0" y="0" width="128" height="50" rx="6" fill="#ffffff" stroke="#e9d5ff" stroke-width="1"/>
+      <text x="64" y="20" text-anchor="middle" font-family="monospace" font-size="10" fill="#a855f7">Handlers/</text>
+      <text x="64" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#64748b">Saga Handlers</text>
+    </g>
+    <g transform="translate(15, 108)">
+      <rect x="0" y="0" width="128" height="50" rx="6" fill="#ffffff" stroke="#e9d5ff" stroke-width="1"/>
+      <text x="64" y="20" text-anchor="middle" font-family="monospace" font-size="10" fill="#a855f7">AppDbContext</text>
+      <text x="64" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#64748b">EF Core 10</text>
+    </g>
+    <g transform="translate(157, 108)">
+      <rect x="0" y="0" width="128" height="50" rx="6" fill="#ffffff" stroke="#e9d5ff" stroke-width="1"/>
+      <text x="64" y="20" text-anchor="middle" font-family="monospace" font-size="10" fill="#a855f7">Program.cs</text>
+      <text x="64" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#64748b">Wolverine Config</text>
+    </g>
+
+    <!-- Two patterns -->
+    <rect x="15" y="172" width="128" height="22" rx="11" fill="#dcfce7" stroke="#22c55e" stroke-width="1"/>
+    <text x="79" y="187" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#16a34a">Outbox (Safe)</text>
+    <rect x="157" y="172" width="128" height="22" rx="11" fill="#fef2f2" stroke="#ef4444" stroke-width="1"/>
+    <text x="221" y="187" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#dc2626">Unsafe (Dual Write)</text>
+  </g>
+
+  <!-- Card 3: RabbitMQ -->
+  <g transform="translate(800, 85)">
+    <rect x="0" y="0" width="265" height="210" rx="12" fill="#f0fdf4" stroke="#22c55e" stroke-width="2"/>
+    <rect x="0" y="0" width="265" height="35" rx="12" fill="url(#greenGradient)"/>
+    <rect x="0" y="20" width="265" height="15" fill="url(#greenGradient)"/>
+    <text x="132" y="24" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff">RabbitMQ</text>
+
+    <g transform="translate(15, 48)">
+      <rect x="0" y="0" width="110" height="50" rx="6" fill="#ffffff" stroke="#dcfce7" stroke-width="1"/>
+      <text x="55" y="20" text-anchor="middle" font-family="monospace" font-size="9" fill="#22c55e">user-reg</text>
+      <text x="55" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#64748b">Topic Exchange</text>
+    </g>
+    <g transform="translate(140, 48)">
+      <rect x="0" y="0" width="110" height="50" rx="6" fill="#ffffff" stroke="#dcfce7" stroke-width="1"/>
+      <text x="55" y="20" text-anchor="middle" font-family="monospace" font-size="9" fill="#22c55e">user-events</text>
+      <text x="55" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#64748b">Topic Exchange</text>
+    </g>
+    <g transform="translate(15, 108)">
+      <rect x="0" y="0" width="110" height="50" rx="6" fill="#ffffff" stroke="#dcfce7" stroke-width="1"/>
+      <text x="55" y="20" text-anchor="middle" font-family="monospace" font-size="9" fill="#22c55e">welcome-email</text>
+      <text x="55" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#64748b">Queue</text>
+    </g>
+    <g transform="translate(140, 108)">
+      <rect x="0" y="0" width="110" height="50" rx="6" fill="#ffffff" stroke="#dcfce7" stroke-width="1"/>
+      <text x="55" y="20" text-anchor="middle" font-family="monospace" font-size="9" fill="#22c55e">:15672</text>
+      <text x="55" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#64748b">Management UI</text>
+    </g>
+
+    <text x="132" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#22c55e">AMQP 0-9-1 :5672</text>
+  </g>
+
+  <!-- ====== Row 2: Contracts, Wolverine, PostgreSQL ====== -->
+
+  <!-- Card 4: Contracts -->
+  <g transform="translate(55, 380)">
+    <rect x="0" y="0" width="250" height="165" rx="12" fill="#f1f5f9" stroke="#0ea5e9" stroke-width="2"/>
+    <rect x="0" y="0" width="250" height="35" rx="12" fill="url(#skyGradient)"/>
+    <rect x="0" y="20" width="250" height="15" fill="url(#skyGradient)"/>
+    <text x="125" y="24" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff">Contracts</text>
+
+    <g transform="translate(15, 48)">
+      <rect x="0" y="0" width="103" height="45" rx="6" fill="#ffffff" stroke="#e0f2fe" stroke-width="1"/>
+      <text x="51" y="18" text-anchor="middle" font-family="monospace" font-size="9" fill="#0ea5e9">RegisterUser</text>
+      <text x="51" y="33" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#64748b">Command</text>
+    </g>
+    <g transform="translate(132, 48)">
+      <rect x="0" y="0" width="103" height="45" rx="6" fill="#ffffff" stroke="#e0f2fe" stroke-width="1"/>
+      <text x="51" y="18" text-anchor="middle" font-family="monospace" font-size="9" fill="#0ea5e9">UserRegistered</text>
+      <text x="51" y="33" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#64748b">Event</text>
+    </g>
+    <g transform="translate(15, 103)">
+      <rect x="0" y="0" width="103" height="45" rx="6" fill="#ffffff" stroke="#e0f2fe" stroke-width="1"/>
+      <text x="51" y="18" text-anchor="middle" font-family="monospace" font-size="9" fill="#0ea5e9">SendWelcome</text>
+      <text x="51" y="33" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#64748b">Command</text>
+    </g>
+    <g transform="translate(132, 103)">
+      <rect x="0" y="0" width="103" height="45" rx="6" fill="#ffffff" stroke="#e0f2fe" stroke-width="1"/>
+      <text x="51" y="18" text-anchor="middle" font-family="monospace" font-size="9" fill="#0ea5e9">WelcomeSent</text>
+      <text x="51" y="33" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#64748b">Event</text>
+    </g>
+  </g>
+
+  <!-- Card 5: Wolverine Bus -->
+  <g transform="translate(400, 380)">
+    <rect x="0" y="0" width="300" height="165" rx="12" fill="#fff7ed" stroke="#f97316" stroke-width="2"/>
+    <rect x="0" y="0" width="300" height="35" rx="12" fill="url(#orangeGradient)"/>
+    <rect x="0" y="20" width="300" height="15" fill="url(#orangeGradient)"/>
+    <text x="150" y="24" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff">Wolverine Bus</text>
+
+    <g transform="translate(15, 48)">
+      <rect x="0" y="0" width="83" height="50" rx="6" fill="#ffffff" stroke="#fed7aa" stroke-width="1"/>
+      <text x="41" y="20" text-anchor="middle" font-family="monospace" font-size="10" fill="#f97316">Outbox</text>
+      <text x="41" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#64748b">Atomic Send</text>
+    </g>
+    <g transform="translate(108, 48)">
+      <rect x="0" y="0" width="83" height="50" rx="6" fill="#ffffff" stroke="#fed7aa" stroke-width="1"/>
+      <text x="41" y="20" text-anchor="middle" font-family="monospace" font-size="10" fill="#f97316">Inbox</text>
+      <text x="41" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#64748b">Dedup</text>
+    </g>
+    <g transform="translate(201, 48)">
+      <rect x="0" y="0" width="83" height="50" rx="6" fill="#ffffff" stroke="#fed7aa" stroke-width="1"/>
+      <text x="41" y="20" text-anchor="middle" font-family="monospace" font-size="10" fill="#f97316">Routing</text>
+      <text x="41" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#64748b">RabbitMQ</text>
+    </g>
+
+    <g transform="translate(15, 110)">
+      <rect x="0" y="0" width="269" height="38" rx="6" fill="#ffffff" stroke="#fed7aa" stroke-width="1"/>
+      <text x="134" y="15" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#f97316">Durable Outbox + Durable Inbox</text>
+      <text x="134" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#64748b">Exactly-Once Processing Guarantee</text>
+    </g>
+  </g>
+
+  <!-- Card 6: PostgreSQL -->
+  <g transform="translate(800, 380)">
+    <rect x="0" y="0" width="265" height="165" rx="12" fill="#eff6ff" stroke="#3b82f6" stroke-width="2"/>
+    <rect x="0" y="0" width="265" height="35" rx="12" fill="url(#blueGradient)"/>
+    <rect x="0" y="20" width="265" height="15" fill="url(#blueGradient)"/>
+    <text x="132" y="24" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff">PostgreSQL 16</text>
+
+    <g transform="translate(15, 48)">
+      <rect x="0" y="0" width="110" height="45" rx="6" fill="#ffffff" stroke="#bfdbfe" stroke-width="1"/>
+      <text x="55" y="18" text-anchor="middle" font-family="monospace" font-size="10" fill="#3b82f6">Users</text>
+      <text x="55" y="33" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#64748b">App Data</text>
+    </g>
+    <g transform="translate(140, 48)">
+      <rect x="0" y="0" width="110" height="45" rx="6" fill="#ffffff" stroke="#bfdbfe" stroke-width="1"/>
+      <text x="55" y="18" text-anchor="middle" font-family="monospace" font-size="9" fill="#3b82f6">MsgHistory</text>
+      <text x="55" y="33" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#64748b">Flow Log</text>
+    </g>
+    <g transform="translate(15, 103)">
+      <rect x="0" y="0" width="110" height="45" rx="6" fill="#ffffff" stroke="#bfdbfe" stroke-width="1"/>
+      <text x="55" y="18" text-anchor="middle" font-family="monospace" font-size="9" fill="#3b82f6">Outgoing</text>
+      <text x="55" y="33" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#64748b">Outbox Table</text>
+    </g>
+    <g transform="translate(140, 103)">
+      <rect x="0" y="0" width="110" height="45" rx="6" fill="#ffffff" stroke="#bfdbfe" stroke-width="1"/>
+      <text x="55" y="18" text-anchor="middle" font-family="monospace" font-size="9" fill="#3b82f6">Incoming</text>
+      <text x="55" y="33" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#64748b">Inbox Table</text>
+    </g>
+  </g>
+
+  <!-- ====== Flow Lines ====== -->
+
+  <!-- A: Tauri → API (HTTP REST) -->
+  <path d="M 305 190 L 400 190" stroke="#dcfce7" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <path d="M 305 190 L 400 190" class="flow-line-teal" stroke="#42b883" stroke-width="3" fill="none" marker-end="url(#arrowTeal)" stroke-linecap="round"/>
+  <text x="352" y="183" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#42b883">HTTP</text>
+
+  <!-- B: API → Wolverine (Outbox Publish) -->
+  <path d="M 550 295 L 550 380" stroke="#ffedd5" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <path d="M 550 295 L 550 380" class="flow-line-orange" stroke="#f97316" stroke-width="3" fill="none" marker-end="url(#arrowOrange)" stroke-linecap="round"/>
+  <text x="570" y="342" text-anchor="start" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#f97316">Outbox</text>
+
+  <!-- C: Wolverine → RabbitMQ (Send) -->
+  <path d="M 680 380 C 680 330 870 330 870 295" stroke="#dcfce7" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <path d="M 680 380 C 680 330 870 330 870 295" class="flow-line-green" stroke="#22c55e" stroke-width="3" fill="none" marker-end="url(#arrowGreen)" stroke-linecap="round"/>
+  <text x="800" y="322" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#22c55e">Send</text>
+
+  <!-- D: Wolverine → PostgreSQL (Persist) -->
+  <path d="M 700 462 L 800 462" stroke="#dbeafe" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <path d="M 700 462 L 800 462" class="flow-line-blue" stroke="#3b82f6" stroke-width="3" fill="none" marker-end="url(#arrowBlue)" stroke-linecap="round"/>
+  <text x="750" y="455" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#3b82f6">Persist</text>
+
+  <!-- E: RabbitMQ → Wolverine (Deliver) -->
+  <path d="M 920 295 C 920 345 720 345 720 380" stroke="#dcfce7" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <path d="M 920 295 C 920 345 720 345 720 380" class="flow-line-green" stroke="#16a34a" stroke-width="3" fill="none" marker-end="url(#arrowGreen)" stroke-linecap="round"/>
+  <text x="845" y="358" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#16a34a">Deliver</text>
+
+  <!-- F: Contracts → Wolverine (Types) -->
+  <path d="M 305 462 L 400 462" stroke="#e0f2fe" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <path d="M 305 462 L 400 462" class="flow-line-sky" stroke="#0ea5e9" stroke-width="3" fill="none" marker-end="url(#arrowSky)" stroke-linecap="round"/>
+  <text x="352" y="455" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#0ea5e9">Types</text>
+
+  <!-- ====== Saga Message Flow ====== -->
+
+  <g transform="translate(55, 600)">
+    <rect x="0" y="0" width="1290" height="175" rx="12" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2"/>
+    <text x="645" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1e293b">Message Saga Flow / Saga Messages</text>
+
+    <!-- Message 1: RegisterUser -->
+    <g transform="translate(35, 45)">
+      <rect x="0" y="0" width="220" height="55" rx="8" fill="#ffffff" stroke="#f97316" stroke-width="2"/>
+      <text x="110" y="22" text-anchor="middle" font-family="monospace" font-size="12" font-weight="bold" fill="#f97316">RegisterUser</text>
+      <text x="110" y="42" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#64748b">Sent via Outbox</text>
+    </g>
+
+    <!-- Arrow 1→2 -->
+    <path d="M 260 72 L 330 72" stroke="#ffedd5" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M 260 72 L 330 72" class="flow-line-orange" stroke="#f97316" stroke-width="2" fill="none" marker-end="url(#arrowOrange)" stroke-linecap="round"/>
+
+    <!-- Message 2: UserRegistered -->
+    <g transform="translate(335, 45)">
+      <rect x="0" y="0" width="220" height="55" rx="8" fill="#ffffff" stroke="#0ea5e9" stroke-width="2"/>
+      <text x="110" y="22" text-anchor="middle" font-family="monospace" font-size="12" font-weight="bold" fill="#0ea5e9">UserRegistered</text>
+      <text x="110" y="42" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#64748b">Received via Inbox</text>
+    </g>
+
+    <!-- Arrow 2→3 -->
+    <path d="M 560 72 L 630 72" stroke="#e0f2fe" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M 560 72 L 630 72" class="flow-line-sky" stroke="#0ea5e9" stroke-width="2" fill="none" marker-end="url(#arrowSky)" stroke-linecap="round"/>
+
+    <!-- Message 3: SendWelcomeEmail -->
+    <g transform="translate(635, 45)">
+      <rect x="0" y="0" width="220" height="55" rx="8" fill="#ffffff" stroke="#0ea5e9" stroke-width="2"/>
+      <text x="110" y="22" text-anchor="middle" font-family="monospace" font-size="12" font-weight="bold" fill="#0ea5e9">SendWelcomeEmail</text>
+      <text x="110" y="42" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#64748b">Received via Inbox</text>
+    </g>
+
+    <!-- Arrow 3→4 -->
+    <path d="M 860 72 L 930 72" stroke="#e0f2fe" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M 860 72 L 930 72" class="flow-line-sky" stroke="#0ea5e9" stroke-width="2" fill="none" marker-end="url(#arrowSky)" stroke-linecap="round"/>
+
+    <!-- Message 4: WelcomeEmailSent -->
+    <g transform="translate(935, 45)">
+      <rect x="0" y="0" width="220" height="55" rx="8" fill="#ffffff" stroke="#3b82f6" stroke-width="2"/>
+      <text x="110" y="22" text-anchor="middle" font-family="monospace" font-size="12" font-weight="bold" fill="#3b82f6">WelcomeEmailSent</text>
+      <text x="110" y="42" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#64748b">Completed via Inbox</text>
+    </g>
+
+    <!-- Type badges -->
+    <g transform="translate(145, 110)">
+      <circle cx="0" cy="0" r="5" fill="#f97316"/>
+      <text x="12" y="4" font-family="Arial, sans-serif" font-size="10" fill="#64748b">Command</text>
+    </g>
+    <g transform="translate(445, 110)">
+      <circle cx="0" cy="0" r="5" fill="#0ea5e9"/>
+      <text x="12" y="4" font-family="Arial, sans-serif" font-size="10" fill="#64748b">Event (Cascade)</text>
+    </g>
+    <g transform="translate(745, 110)">
+      <circle cx="0" cy="0" r="5" fill="#0ea5e9"/>
+      <text x="12" y="4" font-family="Arial, sans-serif" font-size="10" fill="#64748b">Command (Cascade)</text>
+    </g>
+    <g transform="translate(1045, 110)">
+      <circle cx="0" cy="0" r="5" fill="#3b82f6"/>
+      <text x="12" y="4" font-family="Arial, sans-serif" font-size="10" fill="#64748b">Event (Final)</text>
+    </g>
+
+    <text x="645" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#94a3b8">Handler return values auto-publish next message (Cascading Messages Pattern)</text>
+  </g>
+
+  <!-- ====== Legend ====== -->
+
+  <g transform="translate(55, 820)">
+    <rect x="0" y="0" width="1290" height="55" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2"/>
+    <text x="645" y="18" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#64748b">LEGEND</text>
+
+    <rect x="20" y="30" width="30" height="15" rx="3" fill="#42b883"/>
+    <text x="55" y="42" font-family="Arial, sans-serif" font-size="10" fill="#1e293b">Frontend</text>
+
+    <rect x="130" y="30" width="30" height="15" rx="3" fill="#a855f7"/>
+    <text x="165" y="42" font-family="Arial, sans-serif" font-size="10" fill="#1e293b">API</text>
+
+    <rect x="210" y="30" width="30" height="15" rx="3" fill="#f97316"/>
+    <text x="245" y="42" font-family="Arial, sans-serif" font-size="10" fill="#1e293b">Message Bus</text>
+
+    <rect x="340" y="30" width="30" height="15" rx="3" fill="#22c55e"/>
+    <text x="375" y="42" font-family="Arial, sans-serif" font-size="10" fill="#1e293b">RabbitMQ</text>
+
+    <rect x="460" y="30" width="30" height="15" rx="3" fill="#3b82f6"/>
+    <text x="495" y="42" font-family="Arial, sans-serif" font-size="10" fill="#1e293b">PostgreSQL</text>
+
+    <rect x="585" y="30" width="30" height="15" rx="3" fill="#0ea5e9"/>
+    <text x="620" y="42" font-family="Arial, sans-serif" font-size="10" fill="#1e293b">Contracts</text>
+
+    <!-- Animated line legend -->
+    <line x1="710" y1="37" x2="760" y2="37" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6,3"/>
+    <text x="768" y="42" font-family="Arial, sans-serif" font-size="10" fill="#1e293b">Animated Flow</text>
+
+    <!-- Atomic badge -->
+    <rect x="880" y="30" width="60" height="15" rx="7" fill="#dcfce7" stroke="#22c55e" stroke-width="1"/>
+    <text x="910" y="41" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#16a34a">Atomic</text>
+    <text x="945" y="42" font-family="Arial, sans-serif" font-size="10" fill="#1e293b">= Outbox (Safe)</text>
+
+    <rect x="1070" y="30" width="60" height="15" rx="7" fill="#fef2f2" stroke="#ef4444" stroke-width="1"/>
+    <text x="1100" y="41" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#dc2626">Separate</text>
+    <text x="1135" y="42" font-family="Arial, sans-serif" font-size="10" fill="#1e293b">= Dual Write (Unsafe)</text>
+  </g>
+
+</svg>

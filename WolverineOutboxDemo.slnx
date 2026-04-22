@@ -1,0 +1,14 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="docker-compose.yml" />
+  </Folder>
+  <Folder Name="/WolverineOutboxDemo.Api/">
+    <Project Path="WolverineOutboxDemo.Api/WolverineOutboxDemo.Api.csproj" />
+  </Folder>
+  <Folder Name="/WolverineOutboxDemo.Contracts/">
+    <Project Path="WolverineOutboxDemo.Contracts/WolverineOutboxDemo.Contracts.csproj" />
+  </Folder>
+  <Folder Name="/WolverineOutboxDemo.Tests/">
+    <Project Path="WolverineOutboxDemo.Tests/WolverineOutboxDemo.Tests.csproj" />
+  </Folder>
+</Solution>
