@@ -199,6 +199,12 @@ td {
   border: 1px solid #262626;
 }
 
+.badge-timeout {
+  background: #ffffff;
+  color: #a3a3a3;
+  border: 1px solid #d4d4d4;
+}
+
 .rabbit-overview {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));

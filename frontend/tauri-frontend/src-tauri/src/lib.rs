@@ -146,6 +146,30 @@ async fn list_message_history() -> Result<Vec<MessageHistoryDto>, String> {
 }
 
 #[derive(Serialize, Deserialize, Clone)]
+#[serde(rename_all = "camelCase")]
+pub struct SagaDto {
+    pub id: String,
+    pub email: String,
+    pub name: String,
+    pub status: String,
+    pub started_at: String,
+    pub completed_at: Option<String>,
+}
+
+#[tauri::command]
+async fn list_sagas() -> Result<Vec<SagaDto>, String> {
+    let client = reqwest::Client::new();
+    client
+        .get(format!("{API_BASE}/api/sagas"))
+        .send()
+        .await
+        .map_err(|e| e.to_string())?
+        .json::<Vec<SagaDto>>()
+        .await
+        .map_err(|e| e.to_string())
+}
+
+#[derive(Serialize, Deserialize, Clone)]
 pub struct RabbitQueue {
     pub name: String,
     pub messages: i64,
@@ -257,6 +281,7 @@ pub fn run() {
             list_outbox,
             list_inbox,
             list_message_history,
+            list_sagas,
             get_rabbit_info,
         ])
         .run(tauri::generate_context!())

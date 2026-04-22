@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using WolverineOutboxDemo.Api.Models;
+using WolverineOutboxDemo.Api.Sagas;
 
 namespace WolverineOutboxDemo.Api.Data
 {
@@ -7,6 +8,7 @@ namespace WolverineOutboxDemo.Api.Data
     {
         public DbSet<User> Users => Set<User>();
         public DbSet<MessageHistory> MessageHistories => Set<MessageHistory>();
+        public DbSet<UserRegistrationSaga> RegistrationSagas => Set<UserRegistrationSaga>();
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -27,6 +29,15 @@ namespace WolverineOutboxDemo.Api.Data
                 entity.Property(e => e.Description).HasMaxLength(500);
                 entity.HasIndex(e => e.CorrelationId);
                 entity.HasIndex(e => e.Timestamp);
+            });
+
+            modelBuilder.Entity<UserRegistrationSaga>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+                entity.Property(e => e.Email).HasMaxLength(200);
+                entity.Property(e => e.Name).HasMaxLength(200);
+                entity.Property(e => e.Status).IsRequired().HasMaxLength(50);
+                entity.ToTable("user_registration_sagas");
             });
         }
     }

@@ -47,6 +47,26 @@
       </section>
 
       <section class="card">
+        <h2>Active Sagas</h2>
+        <p class="card-desc">Stateful workflow tracking via Wolverine Saga pattern</p>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Email</th>
+              <th>Name</th>
+              <th>Status</th>
+              <th>Started</th>
+              <th>Completed</th>
+            </tr>
+          </thead>
+          <tbody id="saga-list">
+            <tr><td colspan="6" class="empty">Loading...</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="card">
         <h2>Message Flow History</h2>
         <p class="card-desc">Timeline of message events across the outbox/inbox pipeline</p>
         <table>
